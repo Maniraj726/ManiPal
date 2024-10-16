@@ -1,0 +1,278 @@
+*{
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* gap: 50px; */
+  width: 100%;
+  /* padding: 10px; */
+}
+.header1 {
+  width: 50%;
+}
+.header2 {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  margin-left: auto;
+}
+
+#button-hover {
+  background: linear-gradient(90deg, #034ea1, #00b7ac);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  
+  /* width: 158px;
+  height: 40px; */
+}
+#button-hover:hover {
+  background: linear-gradient(90deg, #00b7ac, #034ea1);
+}
+.map {
+  gap: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #00b7ac;
+  
+}
+
+/* Styles for the modal popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001; /* Make sure it's above other elements */
+  width: 320px; /* Adjust width as needed */
+  border-radius: 10px;
+  color: #034ea1;
+}
+
+/* Optional: A background overlay for the modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Place it behind the modal */
+}
+.popup-content h2 {
+  color: #034ea1;
+  font-size: xx-large;
+}
+.popup-content p {
+  color: #00B7AC;
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+.select{
+  margin-bottom: 10px;
+}
+#city-select{
+  /* text-align: center; */
+  font-size: 20px;
+  width: 300px;
+  margin-bottom: 10px;
+  height: 200px;
+  color: #034ea1;
+  overflow-y: scroll;
+  
+}
+.options{
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  padding: 8px 0;
+}
+.buttonp{
+  background: linear-gradient(90deg, #034ea1, #00b7ac);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  
+  width: 100%;
+}
+.buttonp:hover {
+  background: linear-gradient(90deg, #00b7ac, #034ea1);
+}
+
+/* Add transition for smooth opening and closing */
+.popup {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.tool {
+  justify-content: space-between;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #034ea1;
+  text-align: center;
+}
+.ig {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
+  gap: 20px;
+}
+.pic {
+  object-fit: contain;
+  margin-top: 5px;
+  max-height: 700px;
+}
+.mainimage {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+.word {
+  top: 40%;
+  left: 30px;
+  position: absolute;
+  z-index: 1;
+}
+
+.word1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: white;
+  font-weight: 600;
+}
+
+.word2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120px;
+  background: linear-gradient(135deg, #ffffff, #00b7ac); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.footer h2{
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  background: linear-gradient(90deg, #034ea1, #00b7ac); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: 100;
+  text-align: center;
+}
+.footer h1{
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 50px;
+  background: linear-gradient(90deg, #034ea1, #00B7AC); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+
+/* 
+position: absolute;
+width: 347px;
+height: 79px;
+left: 1125px;
+top: 662px; */
+
+.task{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  width: 350px;
+  height: 100px;
+  left: 1125px;
+  top: 662px;
+}
+
+ .task button{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 50px;
+  border-width: 5px;
+  border-color: #034ea1;
+  border-radius: 18px;
+  font-weight: 700;
+  padding: 10px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #034ea1;
+  background: rgb(255, 255, 255);
+   
+  
+}  
+.avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40%;
+  width: 50px;
+  height: 50px; 
+  border: 10px  ;
+  border-color: solid white;
+  border-radius: 50px;
+  border-width: 20px;
+  background-color: #034ea1;
+}
+
+/* .avatar img {
+  width: 50px;
+  height: 50px; 
+  border: #ffffff;
+  border-radius: 50%;
+  border-width: 20px;
+  background-color: #034ea1;
+
+} */
