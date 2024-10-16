@@ -96,6 +96,30 @@
   overflow-y: scroll;
   
 }
+.custom-dropdown {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #034ea1;
+  border-radius: 4%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-option.selected {
+  background-color: #e0e0ff;
+}
+
 .options{
   display: flex;
   flex-direction: row;
