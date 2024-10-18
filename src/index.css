@@ -1,5 +1,6 @@
 *{
   font-family: 'Helvetica Neue', sans-serif;
+  
 }
 .header {
   display: flex;
@@ -86,6 +87,31 @@
 .select{
   margin-bottom: 10px;
 }
+.close-button{
+  display:flex ;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  margin-left: 300px;
+}
+.btc{
+  background-color: black;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  border: red solid;
+  border-width: 2px;
+  border-radius: 20px;
+
+
+  
+}
+
 #city-select{
   /* text-align: center; */
   font-size: 20px;
@@ -137,7 +163,6 @@
   justify-content: center;
   gap: 10px;
   border-radius: 8px;
-  
   width: 100%;
 }
 .buttonp:hover {
@@ -147,7 +172,7 @@
 /* Add transition for smooth opening and closing */
 .popup {
   opacity: 0;
-  animation: fadeIn 0.6s forwards;
+  animation: fadeIn 0.5s forwards;
 }
 
 @keyframes fadeIn {
@@ -290,13 +315,95 @@ top: 662px; */
   border-width: 20px;
   background-color: #034ea1;
 }
+.appointment-form {
+  height: 100vh;
+  padding: 1px;
+  color: #034ea1;
+  justify-content: center;
+}
+.form-group {
+  margin-bottom: 20px; /* Add space between form groups */
+  
+}
+.appointment-form h2 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  background: linear-gradient(90deg, #034ea1, #00B7AC); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+  
+}
+label {
+  display: block;
+  margin-right: 20px;
+  margin-bottom: 5px; 
+}
+select{
+  width: 40%; 
+  padding: 8px;
+  box-sizing: border-box;
+  color: #034ea1;
+  border: #034ea1 solid;
+  border-radius: 6px;
+  border-width: 0.5px;
+}
+input {
+  width: 40%; 
+  padding: 8px;
+  box-sizing: border-box;
+  color: #034ea1;
+  border: #034ea1 solid;
+  border-radius: 6px;
+  border-width: 1px;
+}
+#button-book{
+  background: linear-gradient(90deg, #034ea1, #00b7ac);
+  opacity: 50%;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  
+  border-radius: 8px;
+  width: 30%;
+  margin-left: 525px;
 
-/* .avatar img {
-  width: 50px;
-  height: 50px; 
-  border: #ffffff;
-  border-radius: 50%;
-  border-width: 20px;
-  background-color: #034ea1;
-
-} */
+}
+#button-book:hover {
+  opacity: 100%;
+  background: linear-gradient(90deg,  #034ea1, #00b7ac);
+}
+.or{
+  justify-items: center;
+}
+.click{
+  border: #034ea1 solid;
+  width: 100%; 
+  padding: 8px;
+  box-sizing: border-box;
+  color: #034ea1;
+  border: #034ea1 solid;
+  margin-right: 200px;
+  border-radius: 6px;
+  border-width: 0.5px;
+  justify-items: center;
+  margin-bottom: 15px;
+}
+#click h3{
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  background: linear-gradient(90deg, #034ea1, #00B7AC); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  
+}

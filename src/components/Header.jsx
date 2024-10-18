@@ -16,7 +16,7 @@ function Header() {
       <div className="header2">
      <div className="map" onClick={handleClick}>
         <img  className="loc" src="./img/map-pin.svg" /> 
-        <span>Jayanagar</span>
+        <span>Bengaluru</span>
         </div>   
         <img src="./img/Emergency.svg" />
         <button id="button-hover"> <img src="/img/Call Us.svg" /> Appointment</button>
@@ -25,7 +25,7 @@ function Header() {
       {open && (
         <>
           <div className="modal-overlay" onClick={handleClick}></div> {/* Overlay */}
-          <div className="popup">
+          <div className="popup" >
             <Popup handleClick={handleClick} />
           </div>
         </>
