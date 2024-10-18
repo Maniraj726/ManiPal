@@ -3,6 +3,8 @@ import Popup from "./Popup";
 
 function Header() {
   const [open, setOpen]=useState(false);
+  const [location, setLocation]=useState("Bengaluru");
+
   const handleClick=()=>{
     setOpen(!open)
     console.log("open", open)
@@ -16,7 +18,7 @@ function Header() {
       <div className="header2">
      <div className="map" onClick={handleClick}>
         <img  className="loc" src="./img/map-pin.svg" /> 
-        <span>Bengaluru</span>
+        <span>{location}</span>
         </div>   
         <img src="./img/Emergency.svg" />
         <button id="button-hover"> <img src="/img/Call Us.svg" /> Appointment</button>
@@ -26,7 +28,7 @@ function Header() {
         <>
           <div className="modal-overlay" onClick={handleClick}></div> {/* Overlay */}
           <div className="popup" >
-            <Popup handleClick={handleClick} />
+            <Popup handleClick={handleClick} setLocation={setLocation} />
           </div>
         </>
       )}

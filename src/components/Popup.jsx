@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function Popup({handleClick}) {
+function Popup({handleClick, setLocation}) {
   const navigate = useNavigate();
     const [selectedCity, setSelectedCity] = useState('');
-    const [selectedId, setSelectedId ]= useState('');
 
   const cities = [
     { id:1, name: 'Bengaluru', imageUrl: 'https://example.com/bengaluru.png' },
@@ -15,16 +14,16 @@ function Popup({handleClick}) {
     { id:5, name: 'Jaipur', imageUrl: 'https://example.com/jaipur.png' }
   ];
 
-  const handleCityChange = (city,id) => {
+  const handleCityChange = (city) => {
     setSelectedCity(city);
-    setSelectedId(id);
+    setLocation(city)
   };
 
   const handleProceed = () => {
     if (selectedCity) {
       handleClick();
       // Navigate to the appointment page, passing the selected city as a state if needed
-      navigate('/appointment', { state: { id: selectedId } });
+      navigate('/appointment', { state: { city: selectedCity } });
       
     } else {
       console.log('Please select a city');
@@ -44,7 +43,7 @@ function Popup({handleClick}) {
             <div 
             key={city.name} 
             className={`dropdown-option ${selectedCity === city.name ? 'selected' : ''}`} 
-            onClick={() => handleCityChange(city.name,city.id)}
+            onClick={() => handleCityChange(city.name)}
             >
               <div src={city.imageUrl} alt={city.name} className="city-image" />
               <span>{city.name}</span>
