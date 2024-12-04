@@ -56,7 +56,7 @@ function Gun() {
   return (
     <div>
       <div className="appointment-form">
-        {/* <h2>Book an Appointment</h2> */}
+        <h2>Book an Appointment</h2>
         <div className="main_div">
           <div className="form-group">
             <label htmlFor="location">Location</label>
