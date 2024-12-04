@@ -6,7 +6,7 @@ import getSpeciality from "../components/Specialities";
 function Gun() {
   const locationcity = useLocation();
   const { city } = locationcity.state || {};
-
+ 
   const [location, setLocation] = useState();
   const [specialty, setSpecialty] = useState("");
   const [appointmentType, setAppointmentType] = useState();
