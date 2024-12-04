@@ -393,3 +393,14 @@ input {
   margin-bottom: 10px;
   width: 100%;
 }
+#location {
+  -webkit-appearance: none;  /* For Safari */
+  -moz-appearance: none;     /* For Firefox */
+  appearance: none;          /* For modern browsers */
+  background: transparent;   /* Optional: remove the background */
+                /* Optional: remove border */
+}
+
+#location::-ms-expand {
+  display: none;             /* For Internet Explorer */
+}
