@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
+import axios from 'axios';
+import getCities from "./Cities";
 
 function Header() {
   const [open, setOpen]=useState(false);
   const [location, setLocation]=useState("Bengaluru");
+  const loc= getCities();
+  console.log(loc)
 
   const handleClick=()=>{
     setOpen(!open)
@@ -28,7 +32,7 @@ function Header() {
         <>
           <div className="modal-overlay" onClick={handleClick}></div> {/* Overlay */}
           <div className="popup" >
-            <Popup handleClick={handleClick} setLocation={setLocation} />
+            <Popup handleClick={handleClick} setLocation={setLocation} cities={loc} />
           </div>
         </>
       )}

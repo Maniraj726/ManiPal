@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function Popup({handleClick, setLocation}) {
+function Popup({handleClick, setLocation, cities}) {
   const navigate = useNavigate();
     const [selectedCity, setSelectedCity] = useState('');
 
-  const cities = [
-    { id:1, name: 'Bengaluru' },
-    { id:2, name: 'Bhubaneswar' },
-    { id:3, name: 'Delhi NCR' },
-    { id:4, name: 'Goa' },
-    { id:5, name: 'Jaipur'},
-    { id:6, name: 'kerala' }
-  ];
   
-
   const handleCityChange = (city) => {
     setSelectedCity(city);
     setLocation(city)
@@ -42,14 +33,14 @@ function Popup({handleClick, setLocation}) {
         <label htmlFor="city-select">Select your city</label>
         
         <div className="custom-dropdown">
-          {cities.map((city) => (
+          {cities?.map((city) => (
             <div 
-            key={city.name} 
-            className={`dropdown-option ${selectedCity === city.name ? 'selected' : ''}`} 
-            onClick={() => handleCityChange(city.name)}
+            key={city.locationname} 
+            className={`dropdown-option ${selectedCity === city.locationname ? 'selected' : ''}`} 
+            onClick={() => handleCityChange(city.locationname)}
             >
-              <div src={city.imageUrl} alt={city.name} className="city-image" />
-              <span>{city.name}</span>
+              <div src={city.imageUrl} alt={"sw"} className="city-image" />
+              <span>{city.locationname}</span>
             </div>
           ))}
         </div>

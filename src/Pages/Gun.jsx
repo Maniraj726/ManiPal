@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
+import getSpeciality from "../components/Specialities";
 
 function Gun() {
   const locationcity = useLocation();
@@ -12,14 +13,7 @@ function Gun() {
   const [appointmentDateTime, setAppointmentDateTime] = useState("");
   const [currentDateTime, setCurrentDateTime] = useState("");
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://9767-106-51-78-56.ngrok-free.app/api/locations/');
-      console.log('Data:', response.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
+  const spe=getSpeciality();
   
 
 
@@ -29,7 +23,6 @@ function Gun() {
     const now = new Date();
     const formattedDateTime = now.toISOString().slice(0, 16); // Format for 'datetime-local'
     setCurrentDateTime(formattedDateTime);
-    fetchData();
   }, [city]);
 
   const handleSpecialtyChange = (event) => {
@@ -67,23 +60,20 @@ function Gun() {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="specialty">Select Speciality</label>
-            <select
-              id="specialty"
-              value={specialty}
-              onChange={handleSpecialtyChange}
-            >
-              <option value="">Click here to select</option>
-              <option value="Cardiology">Cardiology</option>
-              <option value="Orthopedics">Orthopedics</option>
-              <option value="Dermatology">Dermatology</option>
-              <option value="ENT (Ear, Nose and Throat)">
-                ENT (Ear, Nose and Throat)
-              </option>
-              <option value="Pediatrics">Pediatrics</option>
-            </select>
-          </div>
-        </div>
+      <label htmlFor="specialty">Select Speciality</label>
+      <select
+        id="specialty"
+        value={specialty}
+        onChange={handleSpecialtyChange}
+      >
+        <option value="">Click here to select</option>
+        {spe?.map((specialtyOption, index) => (
+          <option key={index} value={specialtyOption.name}>
+            {specialtyOption.name}
+          </option>
+        ))}
+      </select>
+    </div>        </div>
 
         <div className="main_div">
           <div className="form-group">
