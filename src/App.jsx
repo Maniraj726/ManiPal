@@ -20,7 +20,6 @@ function App() {
       <Content />
       <Footer />
       <Task />
-
       {/* <Appointment /> */}
       {/* <BrowserRouter>
      <Routes>
@@ -53,3 +52,5 @@ export default App
 // }
  
 // export default App
+
+

@@ -7,12 +7,14 @@ function Popup({handleClick, setLocation}) {
     const [selectedCity, setSelectedCity] = useState('');
 
   const cities = [
-    { id:1, name: 'Bengaluru', imageUrl: 'https://example.com/bengaluru.png' },
-    { id:2, name: 'Bhubaneswar', imageUrl: 'https://example.com/bhubaneswar.png' },
-    { id:3, name: 'Delhi NCR', imageUrl: 'https://example.com/delhi.png' },
-    { id:4, name: 'Goa', imageUrl: 'https://example.com/goa.png' },
-    { id:5, name: 'Jaipur', imageUrl: 'https://example.com/jaipur.png' }
+    { id:1, name: 'Bengaluru' },
+    { id:2, name: 'Bhubaneswar' },
+    { id:3, name: 'Delhi NCR' },
+    { id:4, name: 'Goa' },
+    { id:5, name: 'Jaipur'},
+    { id:6, name: 'kerala' }
   ];
+  
 
   const handleCityChange = (city) => {
     setSelectedCity(city);
@@ -21,6 +23,7 @@ function Popup({handleClick, setLocation}) {
 
   const handleProceed = () => {
     if (selectedCity) {
+
       handleClick();
       // Navigate to the appointment page, passing the selected city as a state if needed
       navigate('/appointment', { state: { city: selectedCity } });

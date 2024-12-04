@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')).render(
      <Routes>
       <Route path="/" element={<App />} />
       <Route path="/appointment" element={<Gun />} />
-      </Routes>
+    </Routes>
     
   </StrictMode>
   </BrowserRouter>

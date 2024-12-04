@@ -7,7 +7,7 @@ function Header() {
 
   const handleClick=()=>{
     setOpen(!open)
-    console.log("open", open)
+    // console.log("opened", open)
   }
   return (
     <>
