@@ -14,7 +14,7 @@ function Gun() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('');
+      const response = await axios.get('https://9767-106-51-78-56.ngrok-free.app/api/locations/');
       console.log('Data:', response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
