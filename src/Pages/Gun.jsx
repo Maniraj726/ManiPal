@@ -14,12 +14,14 @@ function Gun() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://b20f-106-51-78-56.ngrok-free.app/api/locations/?format=json');
+      const response = await axios.get('');
       console.log('Data:', response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
+  
+
 
   useEffect(() => {
     setLocation(city);
@@ -54,7 +56,7 @@ function Gun() {
   return (
     <div>
       <div className="appointment-form">
-        <h2>Book an Appointment</h2>
+        {/* <h2>Book an Appointment</h2> */}
         <div className="main_div">
           <div className="form-group">
             <label htmlFor="location">Location</label>
