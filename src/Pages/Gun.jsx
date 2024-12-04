@@ -12,7 +12,6 @@ function Gun() {
   const [appointmentDateTime, setAppointmentDateTime] = useState("");
   const [currentDateTime, setCurrentDateTime] = useState("");
 
-
   const fetchData = async () => {
     try {
       const response = await axios.get('https://b20f-106-51-78-56.ngrok-free.app/api/locations/?format=json');
@@ -21,8 +20,6 @@ function Gun() {
       console.error('Error fetching data:', error);
     }
   };
-  
-  
 
   useEffect(() => {
     setLocation(city);
@@ -49,6 +46,9 @@ function Gun() {
     // Implement logic to submit the appointment form
     console.log("Submitting appointment request...");
     console.log({ location, specialty, appointmentType, appointmentDateTime });
+
+    // Show confirmation alert after submitting
+    alert("Your appointment is confirmed");
   };
 
   return (
@@ -127,6 +127,5 @@ function Gun() {
     </div>
   );
 }
-
 
 export default Gun;
