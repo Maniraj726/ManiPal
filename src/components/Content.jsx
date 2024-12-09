@@ -1,8 +1,9 @@
 import React from 'react'
+import Task from './Task'
 
 export default function Content() {
   return (
-    <>
+    <div className='main-pic'>
     <div className="pic">
     <img className="mainimage" src="./img/Frame 427319860 (1).jpg"/>
   </div>
@@ -15,7 +16,14 @@ export default function Content() {
     
   </div>
   </div>
-    </>
+  <div className='task'>
+        <button>
+          <span>Talk to our Assistant</span>
+          <div ><img className='avatar' src="./img/young doctor standing with crossed arms.svg" />
+          </div>
+        </button>
+        </div>
+    </div>
 
   )
 }

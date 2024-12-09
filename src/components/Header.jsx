@@ -14,7 +14,7 @@ function Header() {
     // console.log("opened", open)
   }
   return (
-    <>
+    
     <div className="header">
       <div className="header1">
         <img src="./img/Logo.svg" alt="" />
@@ -40,7 +40,7 @@ function Header() {
      
     
     
-    </>
+    
   );
 }
 

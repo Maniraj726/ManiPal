@@ -19,7 +19,7 @@ function App() {
   
       <Content />
       <Footer />
-      <Task />
+      {/* <Task /> */}
       {/* <Appointment /> */}
       {/* <BrowserRouter>
      <Routes>

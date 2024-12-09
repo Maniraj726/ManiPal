@@ -4,13 +4,12 @@
 .header {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-
-  /* gap: 50px; */
   width: 100%;
-  /* padding: 10px; */
 }
+
 .header1 {
   width: 50%;
 }
@@ -205,6 +204,10 @@
   width: 100%;
   z-index: 0;
 }
+.main-pic
+{
+  position: relative;
+}
 .word {
   top: 40%;
   left: 30px;
@@ -227,6 +230,8 @@
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
+
+
 .footer h2{
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: 'Helvetica Neue', sans-serif;
@@ -249,31 +254,28 @@
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   text-align: center;
-
 }
+
 .task{
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: absolute;
-  width: 350px;
-  height: 100px;
-  left: 1125px;
-  top: 662px;
+  right: 3%;
+  bottom: 3%;
 }
 .task button{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 260px;
-  height: 50px;
+  width: 100px;
   border-width: 5px;
   border-color: #034ea1;
-  border-radius: 18px;
+  border-radius: 10px;
   font-weight: 700;
-  padding: 10px 10px;
-  font-size: 18px;
+  padding: 2px;
+  font-size: 8px;
   cursor: pointer;
   color: #034ea1;
   background: rgb(255, 255, 255);
@@ -284,8 +286,8 @@
   justify-content: center;
   align-items: center;
   margin-left: 40%;
-  width: 50px;
-  height: 50px; 
+  width: 10px;
+  height: 10px; 
   border: 10px  ;
   border-color: solid white;
   border-radius: 50px;
@@ -351,7 +353,7 @@ input {
   transition: background-color 0.3s ease;
   display: flex;
   justify-content: center;
- align-content: center; 
+  align-content: center; 
   border-radius: 8px;
   width: 30%;
 }
@@ -398,9 +400,319 @@ input {
   -moz-appearance: none;     /* For Firefox */
   appearance: none;          /* For modern browsers */
   background: transparent;   /* Optional: remove the background */
-                /* Optional: remove border */
 }
-
 #location::-ms-expand {
   display: none;             /* For Internet Explorer */
+}
+
+
+
+@media (max-width: 767px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+  .header2 {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+  }
+  #button-hover {
+    background: linear-gradient(90deg, #034ea1, #00b7ac);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  #button-hover img{
+    width: 18px;
+    height: 18px;
+  }
+  #button-hover:hover {
+    background: linear-gradient(90deg, #00b7ac, #034ea1);
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 10px;
+    gap: 20px;
+    
+  }
+  .ig{
+    gap: 4px;
+  }
+  .word1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+  }
+  .word2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    background: linear-gradient(135deg, #ffffff, #00b7ac); /* Apply the gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+    background-clip: text; /* Standard property for background-clip */
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+  .task{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
+.task button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 30px;
+  border-width: 5px;
+  border-color: #034ea1;
+  border-radius: 18px;
+  font-weight: 700;
+  padding: 5px;
+  font-size: 8px;
+  cursor: pointer;
+  color: #034ea1;
+  background: rgb(255, 255, 255);
+}  
+.avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 42%;
+  width: 33px;
+  height: 33px; 
+  border: 10px  ;
+  border-color: solid white;
+  border-radius: 50px;
+  border-width: 20px;
+  background-color: #034ea1;
+}
+.footer h2{
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  background: linear-gradient(90deg, #034ea1, #00b7ac); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: 100;
+  text-align: center;
+}
+.footer h1{
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 35px;
+  background: linear-gradient(90deg, #034ea1, #00B7AC); /* Apply the gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+  background-clip: text; /* Standard property for background-clip */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+}
+
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .header{
+    flex-wrap: wrap;
+  }
+  .word1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+  }
+  .word2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    background: linear-gradient(135deg, #ffffff, #00b7ac); /* Apply the gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+    background-clip: text; /* Standard property for background-clip */
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+  .task{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+  }
+  .task button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 50px;
+    border-width: 5px;
+    border-color: #034ea1;
+    border-radius: 18px;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #034ea1;
+    background: rgb(255, 255, 255);
+  }  
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    width: 50px;
+    height: 50px; 
+    border: 10px  ;
+    border-color: solid white;
+    border-radius: 50px;
+    border-width: 20px;
+    background-color: #034ea1;
+  }
+}
+
+
+@media (min-width: 992px) and (max-width: 1249px) {
+  .word1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+  }
+  .word2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90px;
+    background: linear-gradient(135deg, #ffffff, #00b7ac); /* Apply the gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+    background-clip: text; /* Standard property for background-clip */
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+  .task{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+  }
+  .task button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 50px;
+    border-width: 5px;
+    border-color: #034ea1;
+    border-radius: 18px;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #034ea1;
+    background: rgb(255, 255, 255);
+  }  
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    width: 60px;
+    height: 60px; 
+    border: 10px  ;
+    border-color: solid white;
+    border-radius: 50px;
+    border-width: 20px;
+    background-color: #034ea1;
+  }
+}
+
+/* Extra large screens (large desktops) */
+@media (min-width: 1250px) {
+  .word1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: white;
+    font-weight: 600;
+  }
+  .word2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120px;
+    background: linear-gradient(135deg, #ffffff, #00b7ac); /* Apply the gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+    background-clip: text; /* Standard property for background-clip */
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+  }
+  .task button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 50px;
+    border-width: 5px;
+    border-color: #034ea1;
+    border-radius: 18px;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #034ea1;
+    background: rgb(255, 255, 255);
+  }  
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    width: 60px;
+    height: 60px; 
+    border: 10px  ;
+    border-color: solid white;
+    border-radius: 50px;
+    border-width: 20px;
+    background-color: #034ea1;
+  }
 }
