@@ -394,6 +394,7 @@ input {
   row-gap: 10px;
   margin-bottom: 10px;
   width: 100%;
+
 }
 #location {
   -webkit-appearance: none;  /* For Safari */
@@ -423,9 +424,20 @@ input {
     gap: 45px;
     margin-right: auto;
     margin-left: auto;
-
-
   }
+  .main_div{
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    
+  }
+  .form-group {
+    width: 100%;  
+    margin-bottom: 10px;
+
+    }
   #button-hover {
     background: linear-gradient(90deg, #034ea1, #00b7ac);
     color: white;
