@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
-import getSpeciality from "../components/Specialities";
+// import getSpeciality from "../components/Specialities";
 
 function Gun() {
   const locationcity = useLocation();
@@ -13,9 +13,16 @@ function Gun() {
   const [appointmentDateTime, setAppointmentDateTime] = useState("");
   const [currentDateTime, setCurrentDateTime] = useState("");
 
-  const spe=getSpeciality();
+  // const spe=getSpeciality();
   
+const spe=[
+  {id:1,name:"Cardiology"},
+  {id:1,name:"Endocrinologist"},
+  {id:1,name:"Dermatology"},
+  {id:1,name:"Neurology"},
+  {id:1,name:"ENT"},
 
+]
 
   useEffect(() => {
     setLocation(city);

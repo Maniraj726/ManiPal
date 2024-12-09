@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
 import axios from 'axios';
-import getCities from "./Cities";
+// import getCities from "./Cities";
 
 function Header() {
   const [open, setOpen]=useState(false);
   const [location, setLocation]=useState("Bengaluru");
-  const loc= getCities();
+  // const loc= getCities();
+  const loc=[
+    {id:1,locationname:"Bengaluru"},
+    {id:1,locationname:"Jaipur"},
+    {id:1,locationname:"Goa"},
+    {id:1,locationname:"Chennai"},
+    {id:1,locationname:"Delhi"},
+  
+  ]
   console.log(loc)
 
   const handleClick=()=>{
