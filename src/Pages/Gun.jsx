@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import axios from 'axios';
-// import getSpeciality from "../components/Specialities";
 
 function Gun() {
   const locationcity = useLocation();
@@ -12,17 +10,15 @@ function Gun() {
   const [appointmentType, setAppointmentType] = useState();
   const [appointmentDateTime, setAppointmentDateTime] = useState("");
   const [currentDateTime, setCurrentDateTime] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); // For validation errors
 
-  // const spe=getSpeciality();
-  
-const spe=[
-  {id:1,name:"Cardiology"},
-  {id:1,name:"Endocrinologist"},
-  {id:1,name:"Dermatology"},
-  {id:1,name:"Neurology"},
-  {id:1,name:"ENT"},
-
-]
+  const spe = [
+    { id: 1, name: "Cardiology" },
+    { id: 2, name: "Endocrinologist" },
+    { id: 3, name: "Dermatology" },
+    { id: 4, name: "Neurology" },
+    { id: 5, name: "ENT" },
+  ];
 
   useEffect(() => {
     setLocation(city);
@@ -41,10 +37,33 @@ const spe=[
   };
 
   const handleDateTimeChange = (event) => {
-    setAppointmentDateTime(event.target.value);
+    const selectedDateTime = event.target.value;
+    setAppointmentDateTime(selectedDateTime);
+
+    // Validate selected date and time
+    const now = new Date();
+    const selectedDate = new Date(selectedDateTime);
+    if (selectedDate < now) {
+      setErrorMessage("Please select a future date and time.");
+    } else {
+      setErrorMessage("");
+    }
   };
 
   const handleSubmit = () => {
+    if (!specialty) {
+      alert("Please select a specialty.");
+      return;
+    }
+    if (!appointmentDateTime) {
+      alert("Please select a valid date and time.");
+      return;
+    }
+    if (errorMessage) {
+      alert(errorMessage);
+      return;
+    }
+
     // Implement logic to submit the appointment form
     console.log("Submitting appointment request...");
     console.log({ location, specialty, appointmentType, appointmentDateTime });
@@ -67,20 +86,21 @@ const spe=[
             </select>
           </div>
           <div className="form-group">
-      <label htmlFor="specialty">Select Speciality</label>
-      <select
-        id="specialty"
-        value={specialty}
-        onChange={handleSpecialtyChange}
-      >
-        <option value="">Click here to select</option>
-        {spe?.map((specialtyOption, index) => (
-          <option key={index} value={specialtyOption.name}>
-            {specialtyOption.name}
-          </option>
-        ))}
-      </select>
-    </div>        </div>
+            <label htmlFor="specialty">Select Specialty</label>
+            <select
+              id="specialty"
+              value={specialty}
+              onChange={handleSpecialtyChange}
+            >
+              <option value="">Click here to select</option>
+              {spe?.map((specialtyOption, index) => (
+                <option key={index} value={specialtyOption.name}>
+                  {specialtyOption.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
         <div className="main_div">
           <div className="form-group">
@@ -94,6 +114,7 @@ const spe=[
               onChange={handleDateTimeChange}
               min={currentDateTime} // This ensures only future dates can be selected
             />
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="appointment-type">Type of Appointment</label>
@@ -102,8 +123,9 @@ const spe=[
               value={appointmentType}
               onChange={handleAppointmentTypeChange}
             >
+              <option value="">Select Appointment Type</option>
               <option value="Physical Visit (OPD)">Physical Visit (OPD)</option>
-              <option value="virtual Meet (VM)">Virtual Meet</option>
+              <option value="Virtual Meet (VM)">Virtual Meet</option>
             </select>
           </div>
         </div>
